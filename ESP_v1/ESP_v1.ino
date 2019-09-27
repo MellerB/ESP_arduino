@@ -17,10 +17,16 @@ FC_SimpleTasker tasker;
 
 void setup()
 {
-	if (!initializeTemperatureSensors())
+	Serial.begin(115200);
+
+
+	while (!initializeTemperatureSensors())
 	{
 		// ERROR
 		// Inner, outer or both thermometers failed
+		Serial.println("Init failed");
+
+		delay(1000);
 	}
 
 
