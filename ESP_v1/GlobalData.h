@@ -6,7 +6,7 @@
 
 namespace globalData
 {
-// constants
+// CONFIG
 	// ip address
 	// port
 	struct
@@ -18,9 +18,12 @@ namespace globalData
 		const Pin TemperatureSensorWireBus = 0;
 		const Pin Relay = 0;
 	}pin;
-	const uint8_t insideTempIndex = 0;
-	const uint8_t outsideTempIndex = insideTempIndex == 0 ? 1 : 0; // different than insideIndex
+	const uint8_t InsideTempIndex = 0; // CHANGE ONLY THIS INDEX! outside is auto set to the opposite
+	const uint8_t OutsideTempIndex = InsideTempIndex == 0 ? 1 : 0; // different than insideIndex
 
+	const uint8_t TempBitResolution = 12;
+
+// END OF CONFIG
 
 
 // variables
@@ -40,6 +43,6 @@ namespace globalData
 	{
 		DeviceAddress insideThermometer;
 		DeviceAddress outsideThermometer;
-	}address;
+	}Address;
 }
 
