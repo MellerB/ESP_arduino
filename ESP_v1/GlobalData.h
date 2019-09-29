@@ -15,13 +15,13 @@ namespace globalData
 
 		// !!!!   SET UP ALL PINS   !!!!
 
-		const Pin TemperatureSensorWireBus = 0;
-		const Pin Relay = 0;
+		const Pin TemperatureSensorWireBus = D6;
+		const Pin Relay = D0;
 	}pin;
 	const uint8_t InsideTempIndex = 0; // CHANGE ONLY THIS INDEX! outside is auto set to the opposite
 	const uint8_t OutsideTempIndex = InsideTempIndex == 0 ? 1 : 0; // different than insideIndex
 
-	const uint8_t TempBitResolution = 12;
+	const uint8_t TemperatureBitResolution = 12;
 
 // END OF CONFIG
 

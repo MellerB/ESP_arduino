@@ -38,10 +38,10 @@ bool initializeTemperatureSensors()
 
 	
 	// set up both thermometers
-	sensors.setResolution(TempBitResolution);
+	sensors.setResolution(TemperatureBitResolution);
 	sensors.setWaitForConversion(false); // disable delay inside the request method
 
-	conversionWaitTime = sensors.millisToWaitForConversion(TempBitResolution);
+	conversionWaitTime = sensors.millisToWaitForConversion(TemperatureBitResolution);
 
 
 	// Everything went OK
@@ -53,7 +53,7 @@ bool initializeTemperatureSensors()
 // Which is the maximum reading frequency
 uint32_t getMinTemperatureReadingTaskMicrosInterval()
 {
-	float maxAmtOfReadingsPerSecond = 1000.0 / (float)sensors.millisToWaitForConversion(TempBitResolution);
+	float maxAmtOfReadingsPerSecond = 1000.0 / (float)sensors.millisToWaitForConversion(TemperatureBitResolution);
 	return (uint32_t)((1000000.0f / maxAmtOfReadingsPerSecond) + 0.5f);
 }
 
