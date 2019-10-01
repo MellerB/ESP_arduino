@@ -23,15 +23,23 @@ namespace globalData
 
 	const uint8_t TemperatureBitResolution = 12;
 
+	const uint16_t AveragedSecondsOutsideTemp = 30; // amt of seconds to average past samples
+	const uint16_t AveragedSecondsInsideTemp = 30; // amt of seconds to average past samples
+	const float SetTemperature = 22.0f;
+	const float TemperatureDeadZone = 0.4f;
+
 // END OF CONFIG
 
 
 // variables
-	struct
+	struct tempType
 	{
 		float inside;
 		float outside;
-	}temperature;
+	};
+
+	tempType temperature; // current reading from the sensors
+	tempType averagedTemp; // averaged temperature reading
 
 
 
